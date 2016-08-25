@@ -1,0 +1,47 @@
+<%= form_for(newspaper) do |f| %>
+  <% if newspaper.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(newspaper.errors.count, "error") %> prohibited this newspaper from being saved:</h2>
+
+      <ul>
+      <% newspaper.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :tittle1 %>
+    <%= f.text_field :tittle1 %>
+  </div>
+
+  <div class="field">
+    <%= f.label :text1 %>
+    <%= f.text_field :text1 %>
+  </div>
+
+  <div class="field">
+    <%= f.label :tittle2 %>
+    <%= f.text_field :tittle2 %>
+  </div>
+
+  <div class="field">
+    <%= f.label :text2 %>
+    <%= f.text_field :text2 %>
+  </div>
+
+  <div class="field">
+    <%= f.label :tittle3 %>
+    <%= f.text_field :tittle3 %>
+  </div>
+
+  <div class="field">
+    <%= f.label :text3 %>
+    <%= f.text_field :text3 %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

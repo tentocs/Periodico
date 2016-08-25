@@ -1,0 +1,164 @@
+
+<style>
+  
+
+.carousel-linked-nav,
+.item img {
+  display: block; 
+  margin: 0 auto;
+} 
+.carousel-linked-nav {
+  width: 120px;
+  margin-bottom: 20px;   
+}
+
+
+</style>
+
+
+
+<h1 class="text-left text-muted">Imagen del periodico</h1>
+
+<br>
+<br>
+<br>
+<br>
+
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#">Vierne5</a>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="#">Opinion<span class="sr-only">(current)</span></a></li>
+        <li><a href="#">Sociales</a></li>
+        <li><a href="#">Salud</a></li>
+        <li><a href="#">Deportes</a></li>
+        <li><a href="#">Tablazos</a></li>
+        <li><a href="#">Cronicas</a></li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Entrenimiento <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="#">Action</a></li>
+            <li><a href="#">Another action</a></li>
+            <li><a href="#">Something else here</a></li>
+            <li role="separator" class="divider"></li>
+            <li><a href="#">Separated link</a></li>
+            	
+            <li><a href="#">One more separated link</a></li>
+          </ul>
+        </li>
+      </ul>
+      <form class="navbar-form navbar-right">
+        <div class="form-group">
+          <input type="text" class="form-control" placeholder="Buscar">
+        </div>
+        <button type="submit" class="btn btn-default">Aceptar</button>
+      </form>
+     
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+
+<!-- /.Carousel-->
+<div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+  <!-- Indicators -->
+  <ol class="carousel-indicators">
+    <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+    <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+    <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+     <li data-target="#carousel-example-generic" data-slide-to="3"></li>
+  </ol>
+
+  <!-- Wrapper for slides -->
+  <div class="carousel-inner" role="listbox">
+
+    <div class="item active center">
+          <%= image_tag "9b2cf41d6ec94cb480c91e67f757b0c4.jpg", :alt => "Opinion", :title => "Torres gemelas"%>
+      <div class="carousel-caption">
+        <h3>Torres Gemelas</h3>
+        <p>bla bla bla bla</p>
+      </div>
+    </div>
+      <% @newspapers.each do |newspaper| %>
+ 
+    <div class="item">
+          <%= image_tag "http://src.eluniverso.com/data/recursos/imagenes/PR14T271209,photo06AAA_612_405.jpg", :class => 'text-center', :alt => "Opinion", :title => "Torres gemelas"%>
+      <div class="carousel-caption">
+     <h3><%= newspaper.tittle1 %></h3>
+        <p><%= newspaper.text1 %></p>
+      </div>
+    </div>
+  <% end %>
+  </div>
+
+  <!-- Controls 
+  para utilizar estos iconos se debe instalar la gema primeramente
+  Consultar iconos en este pagina
+  http://fontawesome.io/
+  -->
+
+  <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+    <i class="sr-only">Previous</i>
+    <i class="fa fa-arrow-left glyphicon-chevron-left" aria-hidden="true"></i>
+  </a>
+  <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+    <i class="fa fa-arrow-right glyphicon-chevron-right" aria-hidden="true"></i>
+    <i class="sr-only">Next</i>
+  </a>
+</div>
+  
+
+<br>
+<br>
+<br>
+
+
+<!-- Controls 
+ Columnas del periodico
+  -->
+<div class="container-fluid">
+<% @newspapers.each do |newspaper| %>
+<div class="row">
+    <div class="col-xs-9 col-md-6">
+		<div class="row">
+  <div class="col-sm-12 col-md-12">
+    <div class="thumbnail">
+      <%= image_tag "http://src.eluniverso.com/data/recursos/imagenes/PR14T271209,photo06AAA_612_405.jpg", :alt => "Opinion", :title => "Torres gemelas"%>
+      <div class="caption">
+        <h3><%= newspaper.tittle1 %></h3>
+        <p><%= newspaper.text1 %></p>
+        <p><a href="#" class="btn btn-primary" role="button">Button</a>	</p>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+   
+    <div class="col-xs-3 col-md-4" style="background-color:blue;">Seccion 2</div>
+     <div class="col-xs-3 col-md-2" style="background-color:red;">Seccion 3</div>
+  </div>
+   <% end %>
+</div>
+
+
+
+
+
+
+
+
+<script>
+  $('.carousel').carousel()
+
+</script>

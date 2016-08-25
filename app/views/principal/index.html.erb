@@ -1,26 +1,54 @@
 
 
 <h1 class="text-center text-muted">Hello bootstrap</h1>
-<div class="page-header">
-  <h1>Encabezado de página <small>con un texto secundario</small></h1>
-</div>
-<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+<div class="container">
 
-</p>
+  <!-- Nav tabs -->
+  <ul class="nav nav-tabs" role="tablist">
+    <li role="presentation" class="active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab">Inicio</a></li>
+    <li role="presentation"><a href="#opinion" aria-controls="opinion" role="tab" data-toggle="tab">Opinión</a></li>
+    <li role="presentation"><a href="#sociales" aria-controls="sociales" role="tab" data-toggle="tab">Sociales</a></li>
+    <li role="presentation"><a href="#emprendimiento" aria-controls="emprendimiento" role="tab" data-toggle="tab">Emprendimiento</a></li>
+    <li role="presentation"><a href="#salud" aria-controls="salud" role="tab" data-toggle="tab">Salud</a></li>
+    <li role="presentation"><a href="#deportes" aria-controls="deportes" role="tab" data-toggle="tab">Deportes</a></li>
+	<li role="presentation"><a href="#tablazos" aria-controls="tablazos" role="tab" data-toggle="tab">Tablazos</a></li>
+  <li role="presentation"><a href="#croncias" aria-controls="cornicas" role="tab" data-toggle="tab">Cronicas</a></li>
+  </ul>
 
-<div class="row">
-  <div class="col-sm-6 col-md-4">
-    <div class="thumbnail">
-      <img data-src="..." alt="...">
-      <div class="caption">
-        <h3>Título de la imagen</h3>
-        <p>...</p>
-        <p>
-          <a href="#" class="btn btn-primary" role="button">Botón</a>
-          <a href="#" class="btn btn-default" role="button">Botón</a>
-        </p>
-      </div>
+  <!-- Tab panes -->
+  <div class="tab-content">
+    <div role="tabpanel" class="tab-pane fade in active" id="home"></div>
+    <div role="tabpanel" class="tab-pane fade" id="opinion">
+      
     </div>
+    <div role="tabpanel" class="tab-pane fade" id="sociales"></div>
+    <div role="tabpanel" class="tab-pane fade" id="emprendimiento"></div>
+    <div role="tabpanel" class="tab-pane fade" id="salud"></div>
+    <div role="tabpanel" class="tab-pane fade" id="deportes"></div>
+    <div role="tabpanel" class="tab-pane fade" id="tablazos"></div>
+    <div role="tabpanel" class="tab-pane fade" id="Cronicas"></div>
   </div>
+
 </div>
+<br>
+<br>
+<br>
+
+
+
+
+
+
+
+
+
+
+
+<script>
+	$('#myTabs a[href="#profile"]').tab('show') // Select tab by name
+$('#myTabs a:first').tab('show') // Select first tab
+$('#myTabs a:last').tab('show') // Select last tab
+$('#myTabs li:eq(2) a').tab('show') // Select third tab (0-indexed)
+
+
+</script>
