@@ -4,7 +4,7 @@ class NewspapersController < ApplicationController
   # GET /newspapers
   # GET /newspapers.json
   def index
-    @newspapers = Newspaper.all
+    @newspapers = Newspaper.where("created_at = '2016-08-25 14:14:56'")
   end
 
   # GET /newspapers/1
@@ -69,6 +69,6 @@ class NewspapersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def newspaper_params
-      params.require(:newspaper).permit(:tittle1, :text1, :tittle2, :text2, :tittle3, :text3)
+      params.require(:newspaper).permit(:tittle1, :text1, :tittle2, :text2, :tittle3, :text3, :image)
     end
 end

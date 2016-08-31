@@ -7,22 +7,26 @@
   display: block; 
   margin: 0 auto;
 } 
-.carousel-linked-nav {
-  width: 120px;
-  margin-bottom: 20px;   
+
+.tope{
+top: -140px;
+  position: relative;
+  margin: auto;
 }
 
 
 </style>
 
+<script>
+  $('.carousel').carousel()
+
+</script>
 
 
-<h1 class="text-left text-muted">Imagen del periodico</h1>
+<div class="text-right">
+<%= image_tag "vierne5.png",:size => "900x600" , :class => 'img-responsive', :alt => "Opinion", :title => ""%>
+</div>
 
-<br>
-<br>
-<br>
-<br>
 
 <nav class="navbar navbar-default">
   <div class="container-fluid">
@@ -70,6 +74,8 @@
   </div><!-- /.container-fluid -->
 </nav>
 
+
+<div class="container">
 <!-- /.Carousel-->
 <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
   <!-- Indicators -->
@@ -84,7 +90,7 @@
   <div class="carousel-inner" role="listbox">
 
     <div class="item active center">
-          <%= image_tag "9b2cf41d6ec94cb480c91e67f757b0c4.jpg", :alt => "Opinion", :title => "Torres gemelas"%>
+          <%= image_tag "9b2cf41d6ec94cb480c91e67f757b0c4.jpg",:size => "700x200", :alt => "Opinion", :title => "Torres gemelas"%>
       <div class="carousel-caption">
         <h3>Torres Gemelas</h3>
         <p>bla bla bla bla</p>
@@ -93,7 +99,7 @@
       <% @newspapers.each do |newspaper| %>
  
     <div class="item">
-          <%= image_tag "http://src.eluniverso.com/data/recursos/imagenes/PR14T271209,photo06AAA_612_405.jpg", :class => 'text-center', :alt => "Opinion", :title => "Torres gemelas"%>
+          <%= image_tag newspaper.image,:size => "900x400", :alt => "Opinion", :title => "Torres gemelas"%>
       <div class="carousel-caption">
      <h3><%= newspaper.tittle1 %></h3>
         <p><%= newspaper.text1 %></p>
@@ -113,8 +119,9 @@
     <i class="fa fa-arrow-left glyphicon-chevron-left" aria-hidden="true"></i>
   </a>
   <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+   <i class="sr-only">Next</i>
     <i class="fa fa-arrow-right glyphicon-chevron-right" aria-hidden="true"></i>
-    <i class="sr-only">Next</i>
+   
   </a>
 </div>
   
@@ -127,6 +134,7 @@
 <!-- Controls 
  Columnas del periodico
   -->
+  <!-- 
 <div class="container-fluid">
 <% @newspapers.each do |newspaper| %>
 <div class="row">
@@ -134,7 +142,7 @@
 		<div class="row">
   <div class="col-sm-12 col-md-12">
     <div class="thumbnail">
-      <%= image_tag "http://src.eluniverso.com/data/recursos/imagenes/PR14T271209,photo06AAA_612_405.jpg", :alt => "Opinion", :title => "Torres gemelas"%>
+      <%=  image_tag newspaper.image, :alt => "Opinion", :title => "Torres gemelas"%>
       <div class="caption">
         <h3><%= newspaper.tittle1 %></h3>
         <p><%= newspaper.text1 %></p>
@@ -145,20 +153,150 @@
 </div>
 </div>
    
-    <div class="col-xs-3 col-md-4" style="background-color:blue;">Seccion 2</div>
-     <div class="col-xs-3 col-md-2" style="background-color:red;">Seccion 3</div>
+    <div class="col-xs-3 col-md-3">
+        <div class="row">
+             <div class="col-xs-12 col-md-12">
+              <div class="thumbnail">
+                <%=  image_tag newspaper.image, :alt => "Opinion", :title => "Torres gemelas"%>
+                  <div class="caption">
+                    <h3><%= newspaper.tittle2 %></h3>
+                    <p><%= newspaper.text2 %></p>
+                     <p><a href="#" class="btn btn-primary" role="button">Button</a> </p>
+                  </div>
+             </div>
+            </div>
+      </div> 
+      <div class="row">
+             <div class="col-xs-12 col-md-12">
+              <div class="thumbnail">
+                <%=  image_tag newspaper.image, :alt => "Opinion", :title => "Torres gemelas"%>
+                  <div class="caption">
+                    <h3><%= newspaper.tittle3 %></h3>
+                    <p><%= newspaper.text3 %></p>
+                     <p><a href="#" class="btn btn-primary" role="button">Button</a> </p>
+                  </div>
+             </div>
+            </div>
+      </div> 
   </div>
+  <div class="col-xs-3 col-md-3">
+    <div class="panel panel-primary">
+ 
+  <div class="panel-heading">
+  <%= newspaper.tittle3 %>
+  </div>
+  <div class="panel-body">
+    <div class="thumbnail">
+    <%=  image_tag newspaper.image, :alt => "Opinion", :title => "Torres gemelas"%>
+    </div>
+    <p><%= newspaper.text3 %></p>
+    
+  </div>
+</div>
+
+  </div>
+
    <% end %>
 </div>
 
 
 
+</div>
 
 
+</div>
+-->
+</div>
+<div class="container-fluid">
+<table>
+ <thead>
+      <tr>
+        <th  class="text-center text-muted">Tittle1</th>
+        <th  class="text-center text-muted">Text1</th>
+        <th  class="text-center text-muted">Tittle2</th>
+        
+        <th colspan="3"></th>
+      </tr>
+    </thead
+
+<tr>
+  <td class="col-xs-12 col-md-6"> 
+  <% @newspapers.each do |newspaper| %>
+   <div class="row">
+    <div class="col-xs-12 col-md-12">
+    <div class="row">
+  <div class="col-sm-12 col-md-12">
+    <div class="thumbnail">
+      <%=  image_tag newspaper.image, :alt => "Opinion", :title => ""%>
+      <div class="caption">
+        <h3><%= newspaper.tittle1 %></h3>
+        <p><%= newspaper.text1 %></p>
+        <p><a href="#" class="btn btn-primary" role="button">Button</a> </p>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+</div>
+   <% end %>
+   </td>
+  
+
+  <td class="col-xs-12 col-md-2">
+
+   <% @newspapers.each do |newspaper| %>
+  <div class="row tope">
+    <div class="col-xs-12 col-md-12">
+    <div class="row">
+  <div class="col-sm-12 col-md-12">
+    <div class="thumbnail">
+      <%=  image_tag newspaper.image, :alt => "Opinion", :title => ""%>
+      <div class="caption">
+        <h3><%= newspaper.tittle2 %></h3>
+        <p><%= newspaper.text2 %></p>
+        <p><a href="#" class="btn btn-primary" role="button">Button</a> </p>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+</div>
+<% end %>
+    </td>
+  
 
 
+  <td class="col-xs-12 col-md-4">
 
-<script>
-  $('.carousel').carousel()
+  <% @newspapers.each do |newspaper| %>
+ <div class="row  tope">
+    <div class="col-xs-12 col-md-12">
+    <div class="row">
+  <div class="col-sm-12 col-md-12">
+    <div class="thumbnail">
+      <%=  image_tag newspaper.image, :alt => "Opinion", :title => ""%>
+      <div class="caption">
+        <h3><%= newspaper.tittle3 %></h3>
+        <p><%= newspaper.text3 %></p>
+        <p><a><%= link_to 'show', newspaper %></a> </p>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+</div>
+  <% end %>
+    </td>
 
-</script>
+</tr>
+
+
+</table>
+
+</div>
+
+<footer class="navbar-default navbar-fixed-bottom">
+  <div class="container-fluid">
+    <span>Winning!</span>
+  </div>
+</footer>

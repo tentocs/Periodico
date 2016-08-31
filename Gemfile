@@ -4,7 +4,8 @@ source 'https://rubygems.org'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.0.0'
 # Use sqlite3 as the database for Active Record
-gem 'sqlite3'
+#gem 'sqlite3'
+gem 'mysql2'
 # Use Puma as the app server
 gem 'puma', '~> 3.0'
 #Bootsstap
@@ -17,7 +18,9 @@ gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.2'
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
-
+#Gema para Subir imagenes ojo preciamente se debe instalar imagemagick por consola, esta gema da error
+#por lo que se debeinstalar con sudo gem install paperclip
+gem 'paperclip'
 #Gema para iconos en bootstrap
 gem 'font-awesome-sass'
 # Use jquery as the JavaScript library
