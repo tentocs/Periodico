@@ -1,0 +1,32 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Tittle:</strong>
+  <%= @national.tittle %>
+</p>
+
+<p>
+  <strong>Text:</strong>
+  <%= @national.text %>
+</p>
+
+<p>
+  <strong>Date:</strong>
+  <%= @national.date %>
+</p>
+
+<p>
+  <strong>Time:</strong>
+  <%= @national.time %>
+</p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @national.name %>
+</p>
+<div class="field">
+  <%= image_tag @national.image.url(:mini)%>
+</div>
+
+<%= link_to 'Edit', edit_national_path(@national) %> |
+<%= link_to 'Back', nationals_path %>

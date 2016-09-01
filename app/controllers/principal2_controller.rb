@@ -2,6 +2,12 @@ class Principal2Controller < ApplicationController
   
   def home
   	@newspapers = Newspaper.all
+    @nationals=National.all
+    @healths=Health.all
+    @socials=Social.all
+    @sports=Sport.all
+    @opinions=Opinion.all
+
   end
 
   def show
@@ -14,8 +20,6 @@ class Principal2Controller < ApplicationController
   	@newspapers= Newspaper.find(params[:id])
   end
 
- 
 
- 
 
 end

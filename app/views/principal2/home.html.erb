@@ -24,7 +24,7 @@ top: -140px;
 
 
 <div class="text-right">
-<%= image_tag "vierne5.png",:size => "900x600" , :class => 'img-responsive', :alt => "Opinion", :title => ""%>
+<%= image_tag "vierne5.png",:size => "900x600" , :class => 'img-responsive text-center', :alt => "Opinion", :title => ""%>
 </div>
 
 
@@ -90,7 +90,7 @@ top: -140px;
   <div class="carousel-inner" role="listbox">
 
     <div class="item active center">
-          <%= image_tag "9b2cf41d6ec94cb480c91e67f757b0c4.jpg",:size => "700x200", :alt => "Opinion", :title => "Torres gemelas"%>
+          <%= image_tag "1.jpg",:size => "1400x700", :alt => "Opinion", :title => "Torres gemelas"%>
       <div class="carousel-caption">
         <h3>Torres Gemelas</h3>
         <p>bla bla bla bla</p>
@@ -99,7 +99,7 @@ top: -140px;
       <% @newspapers.each do |newspaper| %>
  
     <div class="item">
-          <%= image_tag newspaper.image,:size => "900x400", :alt => "Opinion", :title => "Torres gemelas"%>
+          <%= image_tag newspaper.image,:size => "1400x200", :alt => "Opinion", :title => "Torres gemelas"%>
       <div class="carousel-caption">
      <h3><%= newspaper.tittle1 %></h3>
         <p><%= newspaper.text1 %></p>
@@ -227,7 +227,7 @@ top: -140px;
     <div class="row">
   <div class="col-sm-12 col-md-12">
     <div class="thumbnail">
-      <%=  image_tag newspaper.image, :alt => "Opinion", :title => ""%>
+      <%=  image_tag newspaper.image,:size => "400x500", :alt => "Opinion", :title => ""%>
       <div class="caption">
         <h3><%= newspaper.tittle1 %></h3>
         <p><%= newspaper.text1 %></p>
@@ -239,18 +239,72 @@ top: -140px;
 </div>
 </div>
    <% end %>
-   </td>
-  
-
-  <td class="col-xs-12 col-md-2">
-
-   <% @newspapers.each do |newspaper| %>
-  <div class="row tope">
+   <% @nationals.each do |national| %>
+   <div class="row">
     <div class="col-xs-12 col-md-12">
     <div class="row">
   <div class="col-sm-12 col-md-12">
     <div class="thumbnail">
-      <%=  image_tag newspaper.image, :alt => "Opinion", :title => ""%>
+      <%=  image_tag national.image,:size => "400x300", :alt => "Opinion", :title => ""%>
+      <div class="caption">
+        <h3><%= national.tittle %></h3>
+        <p><%= national.text %></p>
+        <p><a href="#" class="btn btn-primary" role="button">Button</a> </p>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+</div>
+   <% end %>
+    <% @sports.each do |sport| %>
+   <div class="row">
+    <div class="col-xs-12 col-md-12">
+    <div class="row">
+  <div class="col-sm-12 col-md-12">
+    <div class="thumbnail">
+      <%=  image_tag sport.image,:size => "400x300", :alt => "Opinion", :title => ""%>
+      <div class="caption">
+        <h3><%= sport.tittle %></h3>
+        <p><%= sport.text %></p>
+        <p><a href="#" class="btn btn-primary" role="button">Button</a> </p>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+</div>
+   <% end %>
+   <% @opinions.each do |opinion| %>
+   <div class="row">
+    <div class="col-xs-12 col-md-12">
+    <div class="row">
+  <div class="col-sm-12 col-md-12">
+    <div class="thumbnail">
+      <%=  image_tag opinion.image,:size => "400x300", :alt => "Opinion", :title => ""%>
+      <div class="caption">
+        <h3><%= opinion.tittle %></h3>
+        <p><%= opinion.text %></p>
+        <p><a href="#" class="btn btn-primary" role="button">Button</a> </p>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+</div>
+   <% end %>
+   </td>
+  <td class="col-xs-12 col-md-3">
+
+
+
+   <% @newspapers.each do |newspaper| %>
+  <div class="row">
+    <div class="col-xs-12 col-md-12">
+    <div class="row">
+  <div class="col-sm-12 col-md-12">
+    <div class="thumbnail">
+      <%=  image_tag newspaper.image,:size => "600x400",:alt => "Opinion", :title => ""%>
       <div class="caption">
         <h3><%= newspaper.tittle2 %></h3>
         <p><%= newspaper.text2 %></p>
@@ -262,6 +316,67 @@ top: -140px;
 </div>
 </div>
 <% end %>
+<% @nationals.each do |national| %>
+   <div class="row">
+    <div class="col-xs-12 col-md-12">
+    <div class="row">
+  <div class="col-sm-12 col-md-12">
+    <div class="thumbnail">
+      <%=  image_tag national.image,:size => "400x300", :alt => "Opinion", :title => ""%>
+      <div class="caption">
+        <h3><%= national.tittle %></h3>
+        <p><%= national.text %></p>
+        <p><a href="#" class="btn btn-primary" role="button">Button</a> </p>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+</div>
+   <% end %>
+   <div class="panel panel-default">
+  <div class="panel-heading">Panel heading without title</div>
+  <div class="panel-body">
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo sequi ab ratione quas non fugit soluta ex id, architecto quos commodi nihil, assumenda hic sit, aliquam excepturi alias doloremque, tempora.
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Natus pariatur itaque mollitia odit animi nesciunt. Laudantium eum delectus molestias ipsa voluptates doloremque modi fugiat repudiandae repellat tempora at blanditiis, deserunt!
+  </div>
+</div>
+   <% @sports.each do |sport| %>
+   <div class="row">
+    <div class="col-xs-12 col-md-12">
+    <div class="row">
+  <div class="col-sm-12 col-md-12">
+    <div class="thumbnail">
+      <%=  image_tag sport.image,:size => "400x300", :alt => "Opinion", :title => ""%>
+      <div class="caption">
+        <h3><%= sport.tittle %></h3>
+        <p><%= sport.text %></p>
+        <p><a href="#" class="btn btn-primary" role="button">Button</a> </p>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+</div>
+   <% end %>
+   <% @opinions.each do |opinion| %>
+   <div class="row">
+    <div class="col-xs-12 col-md-12">
+    <div class="row">
+  <div class="col-sm-12 col-md-12">
+    <div class="thumbnail">
+      <%=  image_tag opinion.image,:size => "400x300", :alt => "Opinion", :title => ""%>
+      <div class="caption">
+        <h3><%= opinion.tittle %></h3>
+        <p><%= opinion.text %></p>
+        <p><a href="#" class="btn btn-primary" role="button">Button</a> </p>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+</div>
+   <% end %>
     </td>
   
 
@@ -294,9 +409,3 @@ top: -140px;
 </table>
 
 </div>
-
-<footer class="navbar-default navbar-fixed-bottom">
-  <div class="container-fluid">
-    <span>Winning!</span>
-  </div>
-</footer>

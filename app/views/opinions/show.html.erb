@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Tittle:</strong>
+  <%= @opinion.tittle %>
+</p>
+
+<p>
+  <strong>Text:</strong>
+  <%= @opinion.text %>
+</p>
+
+<p>
+  <strong>Date:</strong>
+  <%= @opinion.date %>
+</p>
+
+<p>
+  <strong>Time:</strong>
+  <%= @opinion.time %>
+</p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @opinion.name %>
+</p>
+
+<div class="field">
+  <%= image_tag @opinion.image.url(:mini)%>
+</div>
+
+<%= link_to 'Edit', edit_opinion_path(@opinion) %> |
+<%= link_to 'Back', opinions_path %>

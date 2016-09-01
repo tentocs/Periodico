@@ -1,0 +1,45 @@
+<%= form_for(social) do |f| %>
+  <% if social.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(social.errors.count, "error") %> prohibited this social from being saved:</h2>
+
+      <ul>
+      <% social.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :tittle %>
+    <%= f.text_field :tittle %>
+  </div>
+
+  <div class="field">
+    <%= f.label :text %>
+    <%= f.text_field :text %>
+  </div>
+
+  <div class="field">
+    <%= f.label :date %>
+    <%= f.date_select :date %>
+  </div>
+
+  <div class="field">
+    <%= f.label :time %>
+    <%= f.time_select :time %>
+  </div>
+
+  <div class="field">
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+   Subir Imagen:<%= f.file_field:image %> 
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
