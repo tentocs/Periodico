@@ -1,0 +1,16 @@
+
+<%= form_for :update, :url => { :action => :actualizar }, method:"post" do |f| %>
+
+
+<h1>prueba de actualizar</h1>
+
+   <div class="field">
+    <%= f.label :fecha %>
+    
+    <%= f.date_select :fecha %>
+  </div>
+
+    <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

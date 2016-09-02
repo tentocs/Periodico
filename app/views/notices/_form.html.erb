@@ -1,0 +1,59 @@
+<%= form_for(notice) do |f| %>
+  <% if notice.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(notice.errors.count, "error") %> prohibited this notice from being saved:</h2>
+
+      <ul>
+      <% notice.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :titulo %>
+    <%= f.text_field :titulo %>
+  </div>
+
+  <div class="field">
+    <%= f.label :texto %>
+    <%= f.text_field :texto %>
+  </div>
+
+  <div class="field">
+    <%= f.label :fecha %>
+    <%= f.date_select :fecha %>
+  </div>
+
+  <div class="field">
+    <%= f.label :tipo %>
+    <%= f.select :tipo, options_for_select([["Salud", 1], ["Opinion", 2],["Deportes", 3],["Nacionales", 4],["Sociales", 5]]), include_blank: true %>
+  </div>
+
+  <div class="field">
+    <%= f.label :nombre %>
+    <%= f.text_area :nombre %>
+  </div>
+
+  <div class="field">
+    <%= f.label :hora %>
+    <%= f.time_select :hora %>
+  </div>
+
+  <div class="field">
+    <%= f.label :publication_id %>
+     <%= f.text_field :publication_id %>
+  </div>
+
+
+
+  <div class="field">
+   Subir Imagen:<%= f.file_field:image %> 
+  </div>
+
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

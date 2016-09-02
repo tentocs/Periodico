@@ -1,25 +1,18 @@
 class Principal2Controller < ApplicationController
   
   def home
-  	@newspapers = Newspaper.all
-    @nationals=National.all
-    @healths=Health.all
-    @socials=Social.all
-    @sports=Sport.all
-    @opinions=Opinion.all
+    #@notices=Notice.all
+   #@publication = Publication.find_by(status: true)
+   #@notices = Notice.where("fecha = @publication.fecha, tipo= '2'")
+   #Busqueda con asociacion de tablas con innerjoing
+   @notices=Notice.joins(:publication).where(publications: {status: true})
+
+   #@notices = Notice.find_by(fecha: @publication.fecha)
+   
+  
+   
 
   end
-
-  def show
-  	@newspapers= Newspaper.find(params[:id])
-  	render action: "opinion"
-  	
-  end
-
-  def opinion
-  	@newspapers= Newspaper.find(params[:id])
-  end
-
 
 
 end

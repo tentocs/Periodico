@@ -1,0 +1,43 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Titulo:</strong>
+  <%= @notice.titulo %>
+</p>
+
+<p>
+  <strong>Texto:</strong>
+  <%= @notice.texto %>
+</p>
+
+<p>
+  <strong>Fecha:</strong>
+  <%= @notice.fecha %>
+</p>
+
+<p>
+  <strong>Tipo:</strong>
+  <%= @notice.tipo %>
+</p>
+
+<p>
+  <strong>Nombre:</strong>
+  <%= @notice.nombre %>
+</p>
+
+<p>
+  <strong>Hora:</strong>
+  <%= @notice.hora %>
+</p>
+
+<p>
+  <strong>Publication:</strong>
+  <%= @notice.publication %>
+</p>
+<div class="field">
+  <%= image_tag @notice.image.url(:mini)%>
+</div>
+
+
+<%= link_to 'Edit', edit_notice_path(@notice) %> |
+<%= link_to 'Back', notices_path %>

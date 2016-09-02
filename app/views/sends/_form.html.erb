@@ -1,0 +1,22 @@
+<%= form_for(send) do |f| %>
+  <% if send.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(send.errors.count, "error") %> prohibited this send from being saved:</h2>
+
+      <ul>
+      <% send.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :fecha %>
+    <%= f.date_select :fecha %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
