@@ -3,15 +3,11 @@ Rails.application.routes.draw do
   get 'update/index'
 
   resources :notices
-  resources :nationals
-  resources :healths
-  resources :socials
-  resources :sports
-  resources :opinions
   resources :newspapers
   post 'update/actualizar'
   get 'principal2/home'
-  get '/principal2/opinion/:id', to: 'principal2#show', as: 'opi'
+  get 'principal2/prueba'
+
   get 'principal2/opinion'
   get 'principal/index'
 

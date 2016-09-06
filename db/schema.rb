@@ -12,34 +12,6 @@
 
 ActiveRecord::Schema.define(version: 20160901174428) do
 
-  create_table "healths", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.string   "tittle"
-    t.string   "text"
-    t.date     "date"
-    t.time     "time"
-    t.string   "name"
-    t.datetime "created_at",         null: false
-    t.datetime "updated_at",         null: false
-    t.string   "image_file_name"
-    t.string   "image_content_type"
-    t.integer  "image_file_size"
-    t.datetime "image_updated_at"
-  end
-
-  create_table "nationals", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.string   "tittle"
-    t.string   "text"
-    t.date     "date"
-    t.time     "time"
-    t.string   "name"
-    t.datetime "created_at",         null: false
-    t.datetime "updated_at",         null: false
-    t.string   "image_file_name"
-    t.string   "image_content_type"
-    t.integer  "image_file_size"
-    t.datetime "image_updated_at"
-  end
-
   create_table "newspapers", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "tittle1"
     t.string   "text1"
@@ -57,7 +29,7 @@ ActiveRecord::Schema.define(version: 20160901174428) do
 
   create_table "notices", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "titulo"
-    t.string   "texto"
+    t.string   "texto",              limit: 1000
     t.date     "fecha"
     t.integer  "tipo"
     t.text     "nombre",             limit: 65535
@@ -72,20 +44,6 @@ ActiveRecord::Schema.define(version: 20160901174428) do
     t.index ["publication_id"], name: "index_notices_on_publication_id", using: :btree
   end
 
-  create_table "opinions", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.string   "tittle"
-    t.string   "text",               limit: 1000
-    t.date     "date"
-    t.time     "time"
-    t.string   "name"
-    t.datetime "created_at",                      null: false
-    t.datetime "updated_at",                      null: false
-    t.string   "image_file_name"
-    t.string   "image_content_type"
-    t.integer  "image_file_size"
-    t.datetime "image_updated_at"
-  end
-
   create_table "publications", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.date     "fecha"
     t.boolean  "status"
@@ -98,45 +56,6 @@ ActiveRecord::Schema.define(version: 20160901174428) do
     t.date     "fecha"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-  end
-
-  create_table "sliders", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.string   "tittle"
-    t.string   "text"
-    t.datetime "created_at",         null: false
-    t.datetime "updated_at",         null: false
-    t.string   "image_file_name"
-    t.string   "image_content_type"
-    t.integer  "image_file_size"
-    t.datetime "image_updated_at"
-  end
-
-  create_table "socials", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.string   "tittle"
-    t.string   "text"
-    t.date     "date"
-    t.time     "time"
-    t.string   "name"
-    t.datetime "created_at",         null: false
-    t.datetime "updated_at",         null: false
-    t.string   "image_file_name"
-    t.string   "image_content_type"
-    t.integer  "image_file_size"
-    t.datetime "image_updated_at"
-  end
-
-  create_table "sports", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.string   "tittle"
-    t.string   "text"
-    t.date     "date"
-    t.time     "time"
-    t.string   "name"
-    t.datetime "created_at",         null: false
-    t.datetime "updated_at",         null: false
-    t.string   "image_file_name"
-    t.string   "image_content_type"
-    t.integer  "image_file_size"
-    t.datetime "image_updated_at"
   end
 
   add_foreign_key "notices", "publications"
