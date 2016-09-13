@@ -27,6 +27,13 @@ gem 'font-awesome-sass'
 gem 'jquery-rails'
 # Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks
 gem 'turbolinks', '~> 5'
+
+# Gemas para colocar el calendario, ojo el datatimepicker se coloca con esta version , '~> 4.17.42' se 
+# instala con sudo gem install y luego venimos al gemfile y se quita , '~> 4.17.42' para que pueda funcionar
+gem 'momentjs-rails', '>= 2.9.0'
+
+gem 'bootstrap3-datetimepicker-rails'
+
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.5'
 # Use Redis adapter to run Action Cable in production

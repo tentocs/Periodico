@@ -1,4 +1,20 @@
 Rails.application.routes.draw do
+  get 'administrator/index'
+
+  get 'sections/salud'
+
+  get 'sections/opinion'
+
+  get 'sections/deporte'
+
+  get 'sections/nacional'
+
+  get 'sections/tablazos'
+
+  get 'sections/social'
+
+  get 'sections/emprendedor'
+
   resources :sends
   get 'update/index'
 

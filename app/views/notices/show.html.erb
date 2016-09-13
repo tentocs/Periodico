@@ -1,32 +1,31 @@
 
 
-<p id="notice"><%= notice %></p>
-
-
-<div class="container-fluid">
+<div class="container">
 
 <div class="container-fluid">
-  <div class="text-center">
-    <% if @notice.tipo == 1  %>
-        <h1>Salup</h1>
-      <% elsif @notice.tipo == 2 %>  
-        <h1>Opinion</h1>
-      <% elsif @notice.tipo == 3 %>
-        <h1>Deporte</h1>
-      <% elsif @notice.tipo == 4 %>
-        <h1>Nacional</h1> 
-      <% elsif @notice.tipo == 5 %>  
-        <h1>Social</h1>
-      <%end%>
- </div>
-<hr>
+  
       <div class="row">
         <div class="col-sm-12">
           <div class="page-header">
             <h1> 
               <%= @notice.titulo%>
             </h1>
-            <p>Escrito por<i class="fa fa-pencil" aria-hidden="true"></i><a><%=@notice.nombre%></a> <i class="fa fa-clock-o" aria-hidden="true"></i> <%=l @notice.fecha, :format => :long  %></p>
+            <p>Escrito por<i class="fa fa-pencil" aria-hidden="true"></i><a><%=@notice.nombre%></a> <i class="fa fa-clock-o" aria-hidden="true"></i> <%=l @notice.fecha, :format => :long  %>
+             <i class="fa fa-tags" aria-hidden="true"></i>
+             <% if @notice.tipo == 1  %>
+        <h8 style="color: #F55856;">Salud</h8>
+      <% elsif @notice.tipo == 2 %>  
+        <h8 style="color: #F55856;">Opinion</h8>
+      <% elsif @notice.tipo == 3 %>
+        <h8 style="color: #F55856;">Deporte</h8>
+      <% elsif @notice.tipo == 4 %>
+        <h8 style="color: #F55856;">Nacional</h8> 
+      <% elsif @notice.tipo == 5 %>  
+        <h18 style="color: #F55856;">Social</h8>
+      <%end%>
+            
+
+            </p>
           </div>
         </div>
       </div>
@@ -43,7 +42,7 @@
             <figcaption class="margin-t-h">
               
               <% if @notice.tipo == 1  %>
-                Salup
+                Salud
               <% elsif @notice.tipo == 2 %>  
                 Opinion
               <% elsif @notice.tipo == 3 %>
@@ -55,6 +54,7 @@
               <%end%>
  
             </figcaption>
+            <br>
           </figure>
 
           <p class="text-justify">
@@ -86,66 +86,68 @@
           <% end %>   
         <% end %>
 
-          <hr>
-
-          <!-- Comment form -->
-          <h3>Leave a comment</h3>
-          <p>Please keep in mind that comments are moderated and rel="nofollow" is in use. So, please do not use a spammy keyword or a domain as your name, or else it will be deleted. Thank you!</p>
-
-          <div class="well">
-            <form>
-              <div class="form-group">
-                <label for="contactName">Name</label>
-                <input type="email" class="form-control" id="contactName" placeholder="Enter your name">
-              </div>
-              <div class="form-group">
-                <label for="contactEmail">Email</label>
-                <input type="email" class="form-control" id="contactEmail" placeholder="Enter email">
-                <p class="help-block">Make sure you use a valid email address</p>
-              </div>
-              <div class="form-group">
-                <label for="contactComment">Comment</label>
-                <textarea class="form-control" id="contactComment"></textarea>
-              </div>
-              <button type="submit" class="btn btn-default">Submit</button>
-            </form>
-          </div>
-          <hr>
-
-          
-
         </div>
+
+
         <div class="col-sm-4">
-          <!-- Search -->
 
-          <div class="well">
-  <div id="datetimepicker1" class="input-append date">
-    <input data-format="dd/MM/yyyy hh:mm:ss" type="text"></input>
-    <span class="add-on">
-      <i data-time-icon="icon-time" data-date-icon="icon-calendar">
-      </i>
-    </span>
-  </div>
-</div>
-<script type="text/javascript">
-  $(function() {
-    $('#datetimepicker1').datetimepicker({
-      language: 'pt-BR'
-    });
-  });
-</script>
+          <!-- Calendario -->
 
+        <div style="overflow:hidden;">
+          <div class="form-group">
+              <div class="row">
+                  <div class="col-md-8">
+                     <div id="datetimepicker12"></div>
+                  </div>
+              </div>
+          </div>
+          <script type="text/javascript">
+             $(function () {
+                 $('#datetimepicker12').datetimepicker({
+                     inline: true,
+                     format: "dd/MM/yyyy",
+                      icons: {                  
+                         time: "fa fa-clock-o",
+                         date: "fa fa-calendar",
+                         up: "fa fa-arrow-up",
+                         down: "fa fa-arrow-down",
+                         next: "fa fa-arrow-right",
+                         previous: "fa fa-arrow-left",    
+                }
+                 });
+             });
+          </script>
+      </div>
+
+
+                <!-- Panel -->
+          <div class="panel">
+            <div class="panel-heading">
+              <h4 class="panel-title">Espacio publicitario</h4>
+            </div>
+            <div class="panel-body">
+              <p><%= image_tag @notice.image, size:"400x200", class:"img-responsive"%></p>
+            </div>
+          </div>
+
+
+
+      
           <!-- list group -->
           <div class="list-group margin-b-3">
-              <a href="#" class="active list-group-item">  <%= @notice.tipo %></a>
-              <a href="#" class="list-group-item"><%=l @notice.hora, :format => :long  %></a>
-              <a href="#" class="list-group-item"> <%=h l @notice.fecha,:format => :short %></a>
+              <a href="#" class=" active list-group-item" style="border: solid #000;"> Aqui va el twitter  <%= @notice.tipo %></a>
+              <a href="#" class=" active list-group-item" style="border: solid #000;"><%=l @notice.hora, :format => :long  %></a>
+              <a href="#" class="active list-group-item" style="border: solid #000;"> <%=h l @notice.fecha,:format => :short %></a>
           </div>
+              
+              
+
+
 
                   <!-- Panel -->
-          <div class="panel panel-default">
+          <div class="panel">
             <div class="panel-heading">
-              <h4 class="panel-title">Sidebar panel widget</h4>
+              <h4 class="panel-title">Espacio publicitario</h4>
             </div>
             <div class="panel-body">
               <p>Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.</p>
@@ -164,20 +166,10 @@
 
         </div>
       </div>
-      <!-- /.row -->
 
-      <hr>
       
     </div>
 
-   <script type="text/javascript">
-        $(function () {
-            $('#datetimepicker12').datetimepicker({
-                inline: true,
-                sideBySide: true
-            });
-        });
-    </script>
 
 
 <%= link_to 'Edit', edit_notice_path(@notice) %> |

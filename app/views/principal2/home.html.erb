@@ -23,153 +23,318 @@ top: -140px;
 </script>
 
 
-<div class="text-right">
-<%= image_tag "vierne5.png",:size => "900x600" , :class => 'img-responsive text-center', :alt => "Opinion", :title => ""%>
-</div>
-
-
-<nav class="navbar navbar-default">
-  <div class="container-fluid">
-    <!-- Brand and toggle get grouped for better mobile display -->
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-      <a class="navbar-brand" href="#">Vierne5</a>
-    </div>
-
-    <!-- Collect the nav links, forms, and other content for toggling -->
-    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-      <ul class="nav navbar-nav">
-        <li class="active"><a href="#">Opinion<span class="sr-only">(current)</span></a></li>
-        <li><a href="#">Sociales</a></li>
-        <li><a href="#">Salud</a></li>
-        <li><a href="#">Deportes</a></li>
-        <li><a href="#">Tablazos</a></li>
-        <li><a href="#">Cronicas</a></li>
-        <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Entrenimiento <span class="caret"></span></a>
-          <ul class="dropdown-menu">
-            <li><a href="#">Action</a></li>
-            <li><a href="#">Another action</a></li>
-            <li><a href="#">Something else here</a></li>
-            <li role="separator" class="divider"></li>
-            <li><a href="#">Separated link</a></li>
-            	
-            <li><a href="#">One more separated link</a></li>
-          </ul>
-        </li>
-      </ul>
-      <form class="navbar-form navbar-right">
-        <div class="form-group">
-          <input type="text" class="form-control" placeholder="Buscar">
-        </div>
-        <button type="submit" class="btn btn-default">Aceptar</button>
-      </form>
-     
-    </div><!-- /.navbar-collapse -->
-  </div><!-- /.container-fluid -->
-</nav>
-
-
+<!-- Page Content -->
 <div class="container">
-<!-- /.Carousel-->
-<div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
-  <!-- Indicators -->
-  <ol class="carousel-indicators">
-    <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
-    <li data-target="#carousel-example-generic" data-slide-to="1"></li>
-    <li data-target="#carousel-example-generic" data-slide-to="2"></li>
-     <li data-target="#carousel-example-generic" data-slide-to="3"></li>
-  </ol>
-
-  <!-- Wrapper for slides -->
-  <div class="carousel-inner" role="listbox">
-
-    <div class="item active center">
-          <%= image_tag "1.jpg",:size => "1400x700", :alt => "Opinion", :title => "Torres gemelas"%>
-      <div class="carousel-caption">
-        <h3>Torres Gemelas</h3>
-        <p>bla bla bla bla</p>
-      </div>
-    </div>
-      <% @notices.each do |notice| %>
- 
-    <div class="item">
-          <%= image_tag notice.image,:size => "1400x200", :alt => "Opinion", :title => "Torres gemelas"%>
-      <div class="carousel-caption">
-     <h3><%= notice.titulo %></h3>
-        <p><%= notice.texto %></p>
-      </div>
-    </div>
-  <% end %>
-  </div>
-
-  <!-- Controls 
-  para utilizar estos iconos se debe instalar la gema primeramente
-  Consultar iconos en este pagina
-  http://fontawesome.io/
-  -->
-
-  <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
-    <i class="sr-only">Previous</i>
-    <i class="fa fa-arrow-left glyphicon-chevron-left" aria-hidden="true"></i>
-  </a>
-  <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
-   <i class="sr-only">Next</i>
-    <i class="fa fa-arrow-right glyphicon-chevron-right" aria-hidden="true"></i>
-   
-  </a>
-</div>
-  
-
-<br>
-<br>
-<br>
+  <!-- Page Heading/Breadcrumbs -->
+        <div class="row">
+            <div class="col-lg-12">
+                <h1 class="page-header">Portfolio Item
+                    <small>Subheading</small>
+                </h1>
+                <ol class="breadcrumb">
+                    <li><a href="index.html">Home</a>
+                    </li>
+                    <li class="active">Portfolio Item</li>
+                </ol>
+            </div>
+        </div>
 
 
-</div>
-<div class="container-fluid">
-<table>
- <thead>
-      <tr>
-        <th  class="text-center text-muted">Tittle1</th>
-        <th  class="text-center text-muted">Text1</th>
-        <th  class="text-center text-muted">Tittle2</th>
+    <div class="container-fluid">
+
+      <div class="row">
+        <div class="col-sm-8">
+
+          <!-- Image -->
+          <figure class="margin-b-2">
+            <div class="row">
+
+            <div class="col-md-11">
+                <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+                    <!-- Indicators -->
+                    <ol class="carousel-indicators">
+                        <li data-target="#carousel-example-generic" data-slide-to="0"></li>
+                        <li data-target="#carousel-example-generic" data-slide-to="1"  class="active"></li>
+                        <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+                    </ol>
+
+                    <!-- Wrapper for slides -->
+                    <div class="carousel-inner">
+                        <% @notices.each do |notice| %>
+                        <div class="item">
+                            <%= image_tag notice.image,height:"750", width:"800"%>
+                          <div class="carousel-caption">
+                            <h3><%= notice.titulo %></h3>
+       
+                          </div>
+                        </div>
+                        
+                        <% end %>
+                        <div class="item  active">
+                            <img class="img-responsive" src="http://placehold.it/750x500" alt="">
+                        </div>
+                    </div>
+
+                    <!-- Controls -->
+                    <a class="left carousel-control" href="#carousel-example-generic" data-slide="prev">
+                        <i class="fa fa-arrow-left glyphicon-chevron-left" aria-hidden="true"></i>
+
+                    </a>
+                    <a class="right carousel-control" href="#carousel-example-generic" data-slide="next">
+                       <i class="fa fa-arrow-right glyphicon-chevron-right" aria-hidden="true"></i>
+                    </a>
+                </div>
+            </div>
+
+        </div>
+          </figure>
+            <hr>
+            <!-- Noticias por tipo-->
+
+            <!-- Nacional-->
+          <div class="row">
+        <div class="col-sm-12">
+
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <h4 class="panel-title">Nacional</h4>
+            </div>
+          </div>
+          </div>
+          </div>
+          <div class="row">
+          <% @notices.each do |notice| %>
+            <% if notice.tipo== 4%>
+            <div class="col-md-6 portfolio-item">
+                <a href="#">
+              <%= image_tag notice.image, height:"638", width:"385", class:"img-responsive", title:"  "%>
+                </a>
+                <h3>
+                    <a href="#"><h3><%= notice.titulo %></h3></a>
+                </h3>
+                <!--<p><%= notice.texto %></p>-->
+            </div>
+            <% end %>
+            <% end %>
+            </div>
+
+              <!-- Social-->
+          <div class="row">
+        <div class="col-sm-12">
+
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <h4 class="panel-title">Social</h4>
+            </div>
+          </div>
+          </div>
+          </div>
+          <div class="row">
+          <% @notices.each do |notice| %>
+            <% if notice.tipo== 5%>
+            <div class="col-md-6 portfolio-item">
+                <a href="#">
+              <%= image_tag notice.image, height:"638", width:"385", class:"img-responsive", title:" "%>
+                </a>
+                <h3>
+                    <a href="#"><h3><%= notice.titulo %></h3></a>
+                </h3>
+                <!--<p><%= notice.texto %></p>-->
+            </div>
+            <% end %>
+            <% end %>
+            </div>
+
+              <!-- Salud-->
+          <div class="row">
+        <div class="col-sm-12">
+
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <h4 class="panel-title">Salud</h4>
+            </div>
+          </div>
+          </div>
+          </div>
+          <div class="row">
+          <% @notices.each do |notice| %>
+            <% if notice.tipo== 1%>
+            <div class="col-md-6 portfolio-item">
+                <a href="#">
+              <%= image_tag notice.image, height:"638", width:"385", class:"img-responsive", title:"  "%>
+                </a>
+                <h3>
+                    <a href="#"><h3><%= notice.titulo %></h3></a>
+                </h3>
+                <!--<p><%= notice.texto %></p>-->
+            </div>
+            <% end %>
+            <% end %>
+            </div>
+
+              <!-- Opinion-->
+          <div class="row">
+        <div class="col-sm-12">
+
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <h4 class="panel-title">Opinion</h4>
+            </div>
+          </div>
+          </div>
+          </div>
+          <div class="row">
+          <% @notices.each do |notice| %>
+            <% if notice.tipo== 2%>
+            <div class="col-md-6 portfolio-item">
+                <a href="#">
+              <%= image_tag notice.image, height:"638", width:"385", class:"img-responsive", title:" "%>
+                </a>
+                <h3>
+                    <a href="#"><h3><%= notice.titulo %></h3></a>
+                </h3>
+                <!--<p><%= notice.texto %></p>-->
+            </div>
+            <% end %>
+            <% end %>
+            </div>
+
+              <!-- Deportes-->
+          <div class="row">
+        <div class="col-sm-12">
+
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <h4 class="panel-title">Deporte</h4>
+            </div>
+          </div>
+          </div>
+          </div>
+          <div class="row">
+          <% @notices.each do |notice| %>
+            <% if notice.tipo== 3 %>
+            <div class="col-md-6 portfolio-item">
+                <a href="#">
+              <%= image_tag notice.image, height:"638", width:"385", class:"img-responsive", title:""%>
+                </a>
+                <h3>
+                    <a href="#"><h3><%= notice.titulo %></h3></a>
+                </h3>
+                <!--<p><%= notice.texto %></p>-->
+            </div>
+            <% end %>
+            <% end %>
+            </div>
+          
+
+          <!-- Comments -->
+       
+        <!-- /.row -->
+
+        <hr>
+
         
-        <th colspan="3"></th>
-      </tr>
-    </thead
 
-<tr>
-  <td class="col-xs-12 col-md-6"> 
-  <% @notices.each do |notice| %>
-   <div class="row">
-    <div class="col-xs-12 col-md-12">
-    <div class="row">
-  <div class="col-sm-12 col-md-12">
-    <div class="thumbnail">
-      <%=  image_tag notice.image,:size => "400x500", :alt => "Opinion", :title => ""%>
-      <div class="caption">
-        <h3><%= notice.titulo %></h3>
-        <p><%= notice.texto %></p>
-        <p><a href="#" class="btn btn-primary" role="button">Button</a> </p>
+
+        </div>
+
+        <div class="col-sm-4">
+          <!-- Search -->
+               <!-- Panel -->
+          <div class="panel">
+            <div class="panel-heading">
+              <h4 class="panel-title">Espacio publicitario</h4>
+            </div>
+            <div class="panel-body">
+              Aqui va la imagen
+            </div>
+          </div>
+
+          <!-- lista  de tablazos -->
+
+          <div class="list-group margin-b-3">
+
+              <ul class="list-group">
+              <a class="active list-group-item">Tablazos</a>
+              <% @notices.each do |notice| %>
+              <% if notice.tipo==7 %>
+                <li class="list-group-item">
+                  <span class="badge"></span>
+                  <%=  link_to notice.titulo, notice %>
+                </li>
+                 <% end %>
+                <% end %>
+              </ul>
+          </div>
+
+              <!-- Calendario -->
+
+        <div style="overflow:hidden;">
+          <div class="form-group">
+              <div class="row">
+                  <div class="col-md-8">
+                     <div id="datetimepicker12"></div>
+                  </div>
+              </div>
+          </div>
+          <script type="text/javascript">
+             $(function () {
+                 $('#datetimepicker12').datetimepicker({
+                     inline: true,
+                     format: "dd/MM/yyyy",
+                      icons: {                  
+                         time: "fa fa-clock-o",
+                         date: "fa fa-calendar",
+                         up: "fa fa-arrow-up",
+                         down: "fa fa-arrow-down",
+                         next: "fa fa-arrow-right",
+                         previous: "fa fa-arrow-left",    
+                }
+                 });
+             });
+          </script>
       </div>
+
+          <!-- Panel -->
+               <!-- Panel -->
+          <div class="panel">
+            <div class="panel-heading">
+              <h4 class="panel-title">Espacio publicitario</h4>
+            </div>
+            <div class="panel-body">
+              Aqui va la imagen
+            </div>
+          </div>
+
+        </div>
+      </div>
+      <!-- /.row -->
+
+      <hr>
+      
     </div>
-  </div>
+
+<!-- Our Customers -->
+        <div class="row">
+        
+            <div class="col-lg-12">
+                <h2 class="page-header">Mas Noticias</h2>
+            </div>
+              <% @notices.each do |notice| %>
+              <div class="col-sm-3 col-xs-6 portfolio-item">
+                <a href="#">
+              <%= image_tag notice.image, height:"200", width:"400", title:"", class:"img-responsive customer-img"%>
+                </a>
+                <h3>
+                    <a class="text-center"><h3><%= notice.titulo %></h3></a>
+                </h3>
+            </div>
+
+             <% end %>
+       
+          </div>
 </div>
-</div>
-</div>
-   <% end %>
-   </td>
-
-</tr>
 
 
-</table>
 
-</div>
-
+<!-- *********************************************************************************************************** -->

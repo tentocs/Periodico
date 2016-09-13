@@ -1,0 +1,107 @@
+<!-- Page Content -->
+   <div class="container">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-sm-12">
+          <div class="page-header">
+            <h1>Nacional <i class="fa fa-flag-o" aria-hidden="true"></i></h1>
+          </div>
+        </div>
+      </div>
+
+
+      <!-- /.row -->
+
+      <div class="row">
+        <div class="col-sm-8">
+
+             <div class="container">
+
+        <div class="row">
+            <div class="col-lg-12">
+                <ol class="breadcrumb">
+                    <li><a><%=link_to 'Inicio', principal2_home_path %></a>
+                    </li>
+                    <li class="active">Nacional</li>
+                </ol>
+            </div>
+        </div>
+        <!-- /.row -->
+
+        <!-- Blog Post Row -->
+        <% @notices.each do |notice| %>
+        <% if notice.tipo== 4%>
+        <div class="row">
+            <div class="col-md-7">
+                <a href="blog-post.html">
+                    <%= image_tag notice.image,height:"300", width:"600", class:"img-responsive"%>
+                </a>
+            </div>
+            <div class="col-md-5">
+                <h3>
+                    <a href="blog-post.html"><%=  link_to notice.titulo, notice %></a>
+                </h3>
+                <p><a><%= notice.fecha %></a>
+                </p>
+                <p class= "text-justify"><%= truncate( notice.texto, length: 250, separator: ' ')%></p>
+                
+            </div>
+        </div>
+        <!-- /.row -->
+
+        <hr>
+        <% end %>
+        <% end %>
+  
+
+        <hr>
+
+    </div>
+
+        </div>
+        <div class="col-sm-4">
+          <!-- Search -->
+          <div class="panel">
+            <div class="panel-heading">
+              <h4 class="panel-title">Espacio publicitario</h4>
+            </div>
+            <div class="panel-body">
+              <p>Aqui va la imagen</p>
+            </div>
+          </div>
+
+          <!-- list group -->
+          <div class="list-group margin-b-3">
+              <a href="#" class="active list-group-item text-center" style="background-color:#ED1919; border:solid #000;">Tablazos</a>
+              <a href="#" class="list-group-item">Category 2</a>
+              <a href="#" class="list-group-item">Category 3</a>
+          </div>
+
+                  <!-- Panel -->
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <h4 class="panel-title">Sidebar panel widget</h4>
+            </div>
+            <div class="panel-body">
+              <p>Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.</p>
+            </div>
+          </div>
+
+          <!-- Panel -->
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <h4 class="panel-title">Sidebar panel widget</h4>
+            </div>
+            <div class="panel-body">
+              <p>Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+      <!-- /.row -->
+
+      
+      
+    </div>
+  </div>

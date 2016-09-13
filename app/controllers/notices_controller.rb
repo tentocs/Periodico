@@ -35,7 +35,7 @@
     end
     respond_to do |format|
       if @notice.save
-        format.html { redirect_to @notice, notice: 'Notice was successfully created.' }
+        format.html { redirect_to notices_url, notice: 'La Noticia Se Registro Exitosamente.' }
         format.json { render :show, status: :created, location: @notice }
       else
         format.html { render :new }
@@ -49,7 +49,7 @@
   def update
     respond_to do |format|
       if @notice.update(notice_params)
-        format.html { redirect_to @notice, notice: 'Notice was successfully updated.' }
+        format.html { redirect_to notices_url notice: 'La noticia se Actualizo con exito' }
         format.json { render :show, status: :ok, location: @notice }
       else
         format.html { render :edit }

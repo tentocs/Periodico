@@ -16,9 +16,10 @@
     <%= f.text_field :titulo %>
   </div>
 
+<%= f.label :texto %>
   <div class="field">
-    <%= f.label :texto %>
-    <%= f.text_field :texto %>
+    
+    <%= f.text_area  :texto, cols: 60, rows: 40  %>
   </div>
 
   <div class="field">
@@ -28,7 +29,7 @@
 
   <div class="field">
     <%= f.label :tipo %>
-    <%= f.select :tipo, options_for_select([["Salud", 1], ["Opinion", 2],["Deportes", 3],["Nacionales", 4],["Sociales", 5]]), include_blank: true %>
+    <%= f.select :tipo, options_for_select([["Salud", 1], ["Opinion", 2],["Deportes", 3],["Nacionales", 4],["Sociales", 5],["Empredimiento", 6],["Tablazos", 7]]), include_blank: true %>
   </div>
 
   <div class="field">
@@ -42,8 +43,8 @@
   </div>
 
   <div class="field">
-    <%= f.label :publication_id %>
-     <%= f.text_field :publication_id %>
+    <%= f.label :publication_id, hidden: true  %>
+     <%= f.text_field :publication_id, hidden: true %>
   </div>
 
 
